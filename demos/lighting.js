@@ -85,7 +85,7 @@ let vertexShader = `
         vNormal = (modelMatrix * normal).xyz;
         
         // For Gouraud shading (per-vertex) move color calculation from fragment to vertex shader
-        //vColor = calculateLights(normalize(vNormal), vPosition);
+        vColor = calculateLights(normalize(vNormal), vPosition);
         
         gl_Position = viewProjectionMatrix * worldPosition;                        
     }
